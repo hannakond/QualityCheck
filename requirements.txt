@@ -1,0 +1,27 @@
+# pip install -r requirements.txt
+
+# yolov5
+Cython
+matplotlib>=3.2.2
+numpy>=1.18.5
+opencv-python>=4.1.2
+Pillow
+PyYAML>=5.3.1
+scipy>=1.4.1
+tensorboard>=2.2
+torch --extra-index-url https://download.pytorch.org/whl/cu116
+#pip3 --upgrade --force-reinstall  install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+tqdm>=4.41.0
+pandas
+torchvision>=0.8.1
+seaborn>=0.11.0
+psutil
+ipython #required
+
+
+# backend app
+fastapi
+uvicorn
+python-multipart
+requests
+python-dotenv
