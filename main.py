@@ -3,6 +3,7 @@ import random
 import string
 import os
 from log_utils import logger
+import uuid
 
 from fastapi import FastAPI, File, UploadFile, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
@@ -50,21 +51,21 @@ async def root():
 
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
-    id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+    uid = uuid.uuid4()
     logger.info(
-        f"id={id} start, method={request.method} request path={request.url.path}")
-    start_time = time.monotonic()
+        f"request id={uid} start, method = {request.method} request path = {request.url.path}")
+    start = time.monotonic()
 
     response = await call_next(request)
 
-    process_time = '{0:.2f}'.format((time.time() - start_time) * 1000)
+    process_time = "{0:.5f}".format((time.monotonic() - start))
     logger.info(
-        f"id={id} end, execution_time={process_time}ms status_code={response.status_code}")
+        f"request id = {uid} end, response time = {process_time}s status code = {response.status_code}")
 
     return response
 
 
-@app.middleware('http')
+@app.middleware("http")
 async def catch_all_exceptions(request: Request, call_next):
     try:
         return await call_next(request)
@@ -73,25 +74,24 @@ async def catch_all_exceptions(request: Request, call_next):
         return Response("Internal server error", status_code=500)
 
 
-MODEL_PATH = os.path.join('model', 'best.pt')
-YOLO_PATH = 'yolov5'
-DEVICE = 'cuda:0'  # TODO check that device exist?
-model = torch.hub.load(os.path.join(os.getcwd(), YOLO_PATH), 'custom',
-                       path=MODEL_PATH, source='local', device=DEVICE, force_reload=True)
+MODEL_PATH = os.path.join("model", "best.pt")
+YOLO_PATH = "yolov5"
+DEVICE = "cuda:0"
+MODEL = torch.hub.load(os.path.join(os.getcwd(), YOLO_PATH), "custom",
+                    path=MODEL_PATH, source="local", device=DEVICE, force_reload=True)
+    
 
-
-@app.options("/detect")
 @app.post("/detect")
 async def detect(file: UploadFile = File(...)):
-    results = model(Image.open(BytesIO(await file.read())))
+    results = MODEL(Image.open(BytesIO(await file.read())))
 
-    return yolo_payload_to_json(results, model)
+    return yolo_payload_to_json(results, MODEL)
 
 
 @app.get("/status")
-async def api_status():
+async def status():
     """
-    Shows the most important detials related to the host
+    Shows the host state details.
     """
     cuda_avaliable = torch.cuda.is_available()
     if cuda_avaliable:
