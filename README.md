@@ -54,7 +54,7 @@ $(venv) pip install -r yolov5/requirements.txt
 Inside virtual environment:
 
 ```bash
-$(venv) python main.py
+$(venv) python quality_check.py
 ```
 
 ## Run test visualization test
