@@ -3,6 +3,46 @@
 This is a final project of Hanna Kondrashova at the University of London.
 
 We provide here an HTTP sevice that is capable to process pictures and output the coordinates of several types of objects:
-- wrotten apple,
+- rotten apple,
 - good apple,
 - storage containing big amount of apples that are difficult to distinguish.
+
+# Prerequisites
+
+To run the backend application perform the following steps:
+
+1. Clone submodules and LFS objects. In Ubuntu:
+
+```bash
+$ git lfs pull
+$ git submodule update
+```
+
+2. Activate virtual environment. Under Ubuntu, run:
+
+```bash
+$ sudo apt-get install virtualenv
+$ virtualenv venv
+$ source venv/bin/activate
+```
+
+It is assumed that Python >= 3.8 is installed in the system. Otherwise, you need to specify python to `virtualenv`:
+
+```bash
+$ virtualenv --python=<path to python >= 3.8> venv
+```
+
+3. Using activated virtual environment, run:
+
+```bash
+$(venv) pip install -r requirements.txt
+$(venv) pip install -r yolov5/requirements.txt
+```
+
+# Run service
+
+Inside virtual environment:
+
+```bash
+$(venv) python main.py
+```
