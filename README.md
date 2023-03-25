@@ -87,3 +87,9 @@ will produce the following result:
 |![](assets/apple_green_red_in.png)|![](assets/apple_green_red_out.png)|
 |![](assets/example_storages_in.png)|![](assets/example_storages_out.png)|
 |![](assets/rotten_in.png)|![](assets/rotten_out.png)|
+
+## Logging
+
+HTTP requests, debug information and more are shown in the terminal
+running both test and the server part. Also, the log is saved in `log.txt`,
+that is updated dynamically.
