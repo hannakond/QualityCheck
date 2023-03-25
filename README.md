@@ -4,9 +4,9 @@ This is the final project of Hanna Kondrashova at the University of London.
 
 This repository contains an HTTP service that is capable of processing pictures
 and outputting the coordinates of several types of objects:
-    - Rotten apple
-    - Good apple
-    - Storage containing a large amount of apples that are difficult to distinguish
+- Rotten apple
+- Good apple
+- Storage containing a large amount of apples that are difficult to distinguish
 
 ## Prerequisites
 
