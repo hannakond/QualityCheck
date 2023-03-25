@@ -1,6 +1,6 @@
 # Fruit Quality Check Service
 
-This is a part the final project of Hanna Kondrashova at the University of London.
+This is a part of the final project of Hanna Kondrashova at the University of London.
 
 This repository contains an HTTP service that is capable of processing pictures
 and outputting the coordinates of several types of objects:
