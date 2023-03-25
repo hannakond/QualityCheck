@@ -2,17 +2,18 @@
 
 This is the final project of Hanna Kondrashova at the University of London.
 
-This repository contains HTTP sevice that is capable to process pictures and
-output the coordinates of several types of objects:
-- rotten apple,
-- good apple,
-- storage containing big amount of apples that are difficult to distinguish.
+This repository contains an HTTP service that is capable of processing pictures
+and outputting the coordinates of several types of objects:
+    - Rotten apple
+    - Good apple
+    - Storage containing a large amount of apples that are difficult to distinguish
 
 ## Prerequisites
 
 To run the backend application perform the following steps:
 
-1. Setup CUDA >= 11.0 following [official guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/).
+1. Setup CUDA >= 11.0 following [the official guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/).
+Ultimately, you need an AWS or Google Cloud instance with a GPU having ~6GB of memory to run the service. Inference on CPU is much slower, but it can still be used for applications that do not have strict latency restrictions.
 
 2. Clone the repository:
 
