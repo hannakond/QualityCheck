@@ -62,6 +62,12 @@ $(venv) python quality_check.py
 Inside virtual environment:
 
 ```bash
+$(venv) python quality_check.py
+```
+
+Then, in a separate terminal:
+
+```bash
 $(venv) python test_viz.py --filename <image to process>
 ```
 
