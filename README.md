@@ -15,7 +15,9 @@ __NOTE__: The training pipeline is in [QualityCheckTrain](https://github.com/han
 To run the backend application perform the following steps:
 
 1. Setup CUDA >= 11.0 following [the official guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/).
-Ultimately, you need an AWS or Google Cloud instance with a GPU having ~6GB of memory to run the service. Inference on CPU is much slower, but it can still be used for applications that do not have strict latency restrictions.
+Ultimately, you need an AWS or Google Cloud instance with a GPU having ~7GB of memory to run the service with near real-time latency.
+
+Inference on CPU is much slower, but it can still be used for applications that do not have strict latency restrictions.
 
 2. Clone the repository:
 
