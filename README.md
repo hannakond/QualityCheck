@@ -8,7 +8,7 @@ output the coordinates of several types of objects:
 - good apple,
 - storage containing big amount of apples that are difficult to distinguish.
 
-# Prerequisites
+## Prerequisites
 
 To run the backend application perform the following steps:
 
@@ -48,7 +48,7 @@ $(venv) pip install -r requirements.txt
 $(venv) pip install -r yolov5/requirements.txt
 ```
 
-# Run service
+## Run service
 
 Inside virtual environment:
 
@@ -56,4 +56,10 @@ Inside virtual environment:
 $(venv) python main.py
 ```
 
-# Run test with visualization
+## Run test visualization test
+
+Inside virtual environment:
+
+```bash
+$(venv) python test_viz.py
+```
