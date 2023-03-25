@@ -93,3 +93,20 @@ will produce the following result:
 HTTP requests, debug information and more are shown in the terminal
 running both test and the server part. Also, the log is saved in `log.txt`,
 that is updated dynamically.
+
+For example, a request related to one of the examples above, will
+produce the following output:
+
+```
+2023-03-25 16:34:53,612 root         INFO     c7ab2949-8515-4cdc-af95-1e641a2ee644	BEGIN	method = POST	request path = /detect
+2023-03-25 16:34:53,645 root         INFO     c7ab2949-8515-4cdc-af95-1e641a2ee644	END	esponse time = 0.03280s	status code = 200
+2023-03-25 16:34:53,647 root         INFO     class_name storage, bbox [126, 198, 310, 297]
+2023-03-25 16:34:53,659 root         INFO     class_name storage, bbox [0, 231, 104, 311]
+2023-03-25 16:34:53,659 root         INFO     class_name storage, bbox [320, 204, 455, 296]
+2023-03-25 16:34:53,659 root         INFO     class_name storage, bbox [23, 182, 140, 227]
+2023-03-25 16:34:53,660 root         INFO     class_name storage, bbox [191, 145, 399, 192]
+```
+
+The first two lines are related to the server processing the request within
+`time = 0.03280s`, and the last lines are the output logged from the client,
+i.e. `test_viz.py`.
