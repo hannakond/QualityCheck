@@ -2,7 +2,9 @@ import time
 from log_utils import logger
 import uuid
 
-from fastapi import FastAPI, File, UploadFile, Request, Response
+from fastapi import (
+    FastAPI, File, UploadFile, Request, Response
+)
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
