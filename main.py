@@ -1,5 +1,4 @@
 import time
-from log_utils import logger
 import uuid
 
 from fastapi import (
@@ -11,9 +10,10 @@ from fastapi.responses import HTMLResponse
 from PIL import Image
 from io import BytesIO
 
-from yolo_utils import payload_to_json, MODEL
-from cuda_utils import get_cuda_details
-from banner import BANNER
+from src.log_utils import logger
+from src.yolo_utils import payload_to_json, MODEL
+from src.cuda_utils import get_cuda_details
+from src.banner import BANNER
 
 app = FastAPI()
 
