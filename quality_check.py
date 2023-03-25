@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # This is the entry point of the server application that 
 # performs quality check of the apples.
 #
@@ -144,5 +145,5 @@ async def info():
 if __name__ == "__main__":
     import uvicorn
 
-    APP_STR = "main:app"
+    APP_STR = "quality_check:app"
     uvicorn.run(APP_STR, host='0.0.0.0', port=8000, workers=1, reload=False)

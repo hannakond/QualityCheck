@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # This is a command line test for the API that performs quality check of the apples.
 #
 # (c) Hanna Kondrashova, University of London, 2023
