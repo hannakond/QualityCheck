@@ -1,8 +1,9 @@
 # Fruit Quality Check Service
 
-This is a final project of Hanna Kondrashova at the University of London.
+This is the final project of Hanna Kondrashova at the University of London.
 
-We provide here an HTTP sevice that is capable to process pictures and output the coordinates of several types of objects:
+This repository contains HTTP sevice that is capable to process pictures and
+output the coordinates of several types of objects:
 - rotten apple,
 - good apple,
 - storage containing big amount of apples that are difficult to distinguish.
@@ -11,14 +12,22 @@ We provide here an HTTP sevice that is capable to process pictures and output th
 
 To run the backend application perform the following steps:
 
-1. Clone submodules and LFS objects. In Ubuntu:
+1. Setup CUDA >= 11.0 following [official guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/).
+
+2. Clone the repository:
+
+```bash
+$ git clone git@github.com:hannakond/QualityCheck.git
+```
+
+After that, clone submodules and LFS objects:
 
 ```bash
 $ git lfs pull
 $ git submodule update
 ```
 
-2. Activate virtual environment. Under Ubuntu, run:
+3. Activate virtual environment. Under Ubuntu, run:
 
 ```bash
 $ sudo apt-get install virtualenv
@@ -32,7 +41,7 @@ It is assumed that Python >= 3.8 is installed in the system. Otherwise, you need
 $ virtualenv --python=<path to python >= 3.8> venv
 ```
 
-3. Using activated virtual environment, run:
+4. Using activated virtual environment, run:
 
 ```bash
 $(venv) pip install -r requirements.txt
@@ -46,3 +55,5 @@ Inside virtual environment:
 ```bash
 $(venv) python main.py
 ```
+
+# Run test with visualization
