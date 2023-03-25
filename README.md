@@ -57,7 +57,7 @@ Inside virtual environment:
 $(venv) python quality_check.py
 ```
 
-## Run test visualization test
+## Run visual test
 
 Inside virtual environment:
 
