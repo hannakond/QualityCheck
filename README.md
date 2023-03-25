@@ -1,12 +1,14 @@
 # Fruit Quality Check Service
 
-This is the final project of Hanna Kondrashova at the University of London.
+This is a part the final project of Hanna Kondrashova at the University of London.
 
 This repository contains an HTTP service that is capable of processing pictures
 and outputting the coordinates of several types of objects:
 - Rotten apple
 - Good apple
 - Storage containing a large amount of apples that are difficult to distinguish
+
+__NOTE__: The training pipeline is in [QualityCheckTrain](https://github.com/hannakond/QualityCheckTrain) repository.
 
 ## Prerequisites
 
@@ -25,6 +27,7 @@ After that, clone submodules and LFS objects:
 
 ```bash
 $ git lfs pull
+$ git submodule init
 $ git submodule update
 ```
 
