@@ -13,6 +13,7 @@ from io import BytesIO
 
 from yolo_utils import payload_to_json, MODEL
 from cuda_utils import get_cuda_details
+from banner import BANNER
 
 app = FastAPI()
 
@@ -30,25 +31,8 @@ async def root():
     """
     Page shown by default when opening the root location.
     """
-    return """
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>Quality Check API</title>
-  <style>
-  h1 { color: green; text-align: center; }
-  </style>
- </head>
- <body>
-  <h1>API For Quality Check</h1>
-  <ol>
-    <li><a href="/docs">API swagger documentation with playground.</a></li>
-    <li><a href="/status">Status of the host GPU processing pipeline.</a></li>
-  </oi>
- </body>
-</html>
-"""
+    return BANNER
+
 
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
@@ -75,12 +59,12 @@ async def catch_all_exceptions(request: Request, call_next):
         return Response("Internal server error", status_code=500)
 
 
-
 @app.post("/detect")
 async def detect(file: UploadFile = File(...)):
     results = MODEL(Image.open(BytesIO(await file.read())))
 
     return payload_to_json(results, MODEL)
+
 
 @app.get("/status")
 async def status():
@@ -91,7 +75,6 @@ async def status():
 
     return {"status": "ok",
             "cuda": cuda_details}
-
 
 
 if __name__ == "__main__":
