@@ -62,5 +62,22 @@ $(venv) python main.py
 Inside virtual environment:
 
 ```bash
-$(venv) python test_viz.py
+$(venv) python test_viz.py --filename <image to process>
 ```
+
+For example, running the following command:
+
+```bash
+$(venv) python test_viz.py --filename assets/apple_green_red_in.png
+$(venv) python test_viz.py --filename assets/example_storages_in.png
+$(venv) python test_viz.py --filename assets/rotten_in.png
+```
+
+will produce the following result:
+
+
+|Input|Output|
+|-----|------|
+|![](assets/apple_green_red_in.png)|![](assets/apple_green_red_out.png)|
+|![](assets/example_storages_in.png)|![](assets/example_storages_out.png)|
+|![](assets/rotten_in.png)|![](assets/rotten_out.png)|
