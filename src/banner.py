@@ -12,7 +12,7 @@ BANNER = """
   <h1>API For Quality Check</h1>
   <ol>
     <li><a href="/docs">API swagger documentation with playground.</a></li>
-    <li><a href="/status">Status of the host GPU processing pipeline.</a></li>
+    <li><a href="/info">Info of the host GPU processing pipeline.</a></li>
   </oi>
  </body>
 </html>

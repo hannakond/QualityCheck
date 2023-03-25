@@ -1,7 +1,14 @@
+# This is a command line test for the API that performs quality check of the apples.
+#
+# (c) Hanna Kondrashova, University of London, 2023
+
+# These modules will be used in the subsequent code to create a GUI, handle
+# images, send API requests, and parse command-line arguments respectively.
 import tkinter
 from PIL import Image, ImageTk
 import requests
 import argparse
+
 from src.log_utils import logger
 
 """
