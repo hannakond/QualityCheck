@@ -104,7 +104,7 @@ produce the following output:
 
 ```
 2023-03-25 16:34:53,612 root         INFO     c7ab2949-8515-4cdc-af95-1e641a2ee644	BEGIN	method = POST	request path = /detect
-2023-03-25 16:34:53,645 root         INFO     c7ab2949-8515-4cdc-af95-1e641a2ee644	END	esponse time = 0.03280s	status code = 200
+2023-03-25 16:34:53,645 root         INFO     c7ab2949-8515-4cdc-af95-1e641a2ee644	END	response time = 0.03280s	status code = 200
 2023-03-25 16:34:53,647 root         INFO     class_name storage, bbox [126, 198, 310, 297]
 2023-03-25 16:34:53,659 root         INFO     class_name storage, bbox [0, 231, 104, 311]
 2023-03-25 16:34:53,659 root         INFO     class_name storage, bbox [320, 204, 455, 296]
