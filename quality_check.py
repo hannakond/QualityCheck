@@ -83,7 +83,7 @@ async def log_requests(request: Request, call_next):
 
     # Log the end of the request, along with the processing time and response status code
     logger.info(
-        f"{uid}\tEND\tesponse time = {process_time}s\tstatus code = {response.status_code}")
+        f"{uid}\tEND\tresponse time = {process_time}s\tstatus code = {response.status_code}")
 
     # Return the response
     return response
